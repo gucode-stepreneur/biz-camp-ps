@@ -91,7 +91,7 @@ export default function Home() {
   useLayoutEffect(() => {
     if (!images.length) return;
 
-    gsap.utils.toArray(".box").forEach((box) => {
+    gsap.utils.toArray<HTMLElement>(".box").forEach((box) => {
       ScrollTrigger.create({
         trigger: box,
         start: "top top",
@@ -174,7 +174,7 @@ export default function Home() {
             style={{
               zIndex: idx + 1,
               backgroundImage: `url('/${img}')`,
-              backgroundSize: "cover",
+              backgroundSize: "contain",
               backgroundPosition: "center",
             }}
           />
